@@ -1,0 +1,34 @@
+.textSlider {
+  overflow: hidden;
+  width: 100%;
+}
+.textSlider__wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.textSlider__group {
+  display: flex;
+  animation: slideInfinite 10s linear infinite;
+}
+.textSlider__group > div {
+  flex-shrink: 0;
+  margin-right: 20px; /* Adjust spacing between items */
+}
+/* .textSlider__group div {
+  display: inline-block;
+} */
+.textSlider__group::-webkit-scrollbar {
+  display: none;
+}
+/* Keyframes for infinite sliding */
+@keyframes slideInfinite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

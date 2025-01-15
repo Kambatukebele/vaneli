@@ -1,0 +1,77 @@
+{{ 'section-textSlider.css' | asset_url | stylesheet_tag }}
+
+<!-- Text SLider -->
+    <section style="background-color:{{- section.settings.textSlider_background_color_id -}};padding:{{ section.settings.textSlider_padding_top_id }} 0px" class="textSlider">
+      <div class="textSlider__wrapper">
+        <div class="textSlider__group">
+          {%- if section.blocks.size == 1 or section.blocks.size > 1 -%}
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when "textSlider" -%}
+                  <div>
+                    <h2 style="color:{{ section.settings.textSlider_text_color_id }}">{{- block.settings.textSlider_text_id -}}</h2>
+                  </div>
+              {%- endcase -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </div>
+    </section>
+    <!-- End Text SLider -->
+
+{% schema %}
+    {
+        "name": "TextSlider",
+        "tag": "section",
+        "class": "TextSlider",
+        "disabled_on": {
+            "groups": ["header", "footer"]
+        },
+        "settings": [
+          {
+            "type": "color",
+            "id": "textSlider_background_color_id",
+            "label": "Background color",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "textSlider_text_color_id",
+            "label": "Text color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "range",
+            "id": "textSlider_padding_top_id",
+            "label": "Padding top",
+            "min": 10,
+            "max": 40,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+          }
+        
+        ],
+        "blocks": [
+          {
+            "type": "textSlider",
+            "name": "Text Slider",
+            "limit": 15,
+            "settings": [
+              {
+                "type": "text",
+                "id": "textSlider_text_id",
+                "label": "Text",
+                "default": "50% OFF ON SALES"
+              }
+            ]
+          }
+        ],
+        "presets":[
+            {
+                "name": "TextSlider"
+            }
+        ]
+    }
+{% endschema %}
+
