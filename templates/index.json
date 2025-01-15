@@ -76,7 +76,9 @@
     },
     "collection_featured_YkB99Y": {
       "type": "collection-featured",
-      "settings": {}
+      "settings": {
+        "image_picker_id": "shopify://shop_images/instagram_2_600x_e3fc0af1-fe3c-43d4-b6f2-b1ab7770370c.jpg"
+      }
     },
     "text_slider_RDALKt": {
       "type": "textSlider",
