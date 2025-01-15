@@ -32,7 +32,7 @@
   aria-label="{{ section.settings.accessibility_info | escape }}"
 >
   {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
-    <div class="slideshow__controls slideshow__controls--top slider-buttons{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    {% comment %} <div class="slideshow__controls slideshow__controls--top slider-buttons{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -94,7 +94,7 @@
           </span>
         </button>
       {%- endif -%}
-    </div>
+    </div> {% endcomment %}
   {%- endif -%}
 
   <div
@@ -159,26 +159,26 @@
           {%- endif -%}
         </div>
         <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll and forloop.index == 1 %} scroll-trigger animate--slide-in{% endif %}">
-          <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
+          <div style="background-color:{%- if section.blocks.first.settings.is_color_box_background_id_active -%}{{ section.blocks.first.settings.box_background_color_id -}} {%- else -%} transparent {%- endif %}"  class="slideshow__text banner__box content-container content-container--full-width-mobile gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
             {%- if block.settings.heading != blank -%}
-              <h2 class="banner__heading inline-richtext {{ block.settings.heading_size }}">
+              <h2 style="color:{{ section.blocks.first.settings.heading_color_id }}" class="banner__heading inline-richtext {{ block.settings.heading_size }}">
                 {{ block.settings.heading }}
               </h2>
             {%- endif -%}
             {%- if block.settings.subheading != blank -%}
               <div class="banner__text rte" {{ block.shopify_attributes }}>
-                <p>{{ block.settings.subheading }}</p>
+                <p style="color:{{ section.blocks.first.settings.subheading_color_id }}" >{{ block.settings.subheading }}</p>
               </div>
             {%- endif -%}
             {%- if block.settings.button_label != blank -%}
               <div class="banner__buttons">
-                <a
+                <a style="background-color:{{ section.blocks.first.settings.btn_background_color_id }}; color:{{ section.blocks.first.settings.btn_text_color_id }};"
                   {% if block.settings.link %}
                     href="{{ block.settings.link }}"
                   {% else %}
                     role="link" aria-disabled="true"
                   {% endif %}
-                  class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
+                  class="slideshow-button"
                 >
                   {{- block.settings.button_label | escape -}}
                 </a>
@@ -189,7 +189,14 @@
       </div>
     {%- endfor -%}
   </div>
-
+  <style>
+    .slideshow-button{
+      padding: 1rem 3rem;
+      text-decoration: none;
+      min-width: calc(4.5rem + 1);
+      min-height: calc(4.5rem + 1);
+    }
+  </style>
   {%- if section.blocks.size > 1 and section.settings.auto_rotate == false -%}
     <div class="slideshow__controls slider-buttons{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button
@@ -406,6 +413,12 @@
           "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
         },
         {
+          "type": "color",
+          "id": "heading_color_id",
+          "label": "Heading color",
+          "default": "#000000"
+        },
+        {
           "type": "select",
           "id": "heading_size",
           "options": [
@@ -440,11 +453,29 @@
           "label": "t:sections.slideshow.blocks.slide.settings.subheading.label"
         },
         {
+          "type": "color",
+          "id": "subheading_color_id",
+          "label": "Subheading color",
+          "default": "#000000"
+        },
+        {
           "type": "text",
           "id": "button_label",
           "default": "t:sections.slideshow.blocks.slide.settings.button_label.default",
           "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
           "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
+        },
+        {
+          "type": "color",
+          "id": "btn_background_color_id",
+          "label": "Button Background Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "btn_text_color_id",
+          "label": "Button Text Color",
+          "default": "#ffffff"
         },
         {
           "type": "url",
@@ -539,10 +570,16 @@
           "default": 0
         },
         {
-          "type": "color_scheme",
-          "id": "color_scheme",
-          "label": "t:sections.all.colors.label",
-          "default": "scheme-1"
+          "type": "checkbox",
+          "id": "is_color_box_background_id_active",
+          "label": "Active Box Background Color",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "box_background_color_id",
+          "label": "Box background color",
+          "default": "#ffffff"
         },
         {
           "type": "header",
