@@ -1,0 +1,48 @@
+{{ 'section-collection-featured.css' | asset_url | stylesheet_tag }}
+
+<div class="grid-container">
+    <div class="grid-item">
+      <a href="#athleisure">
+        <img src="{{ 'collection-img.jpg' | asset_url }}" alt="Athleisure">
+        <div class="caption">ATHLEISURE</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="#outerwear">
+        <img src="{{ 'collection-img.jpg' | asset_url }}" alt="Outerwear">
+        <div class="caption">OUTERWEAR</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="#basics">
+        <img src="{{ 'collection-img.jpg' | asset_url }}" alt="Basics">
+        <div class="caption">BASICS</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="#final-markdown">
+        <img src="{{ 'collection-img.jpg' | asset_url }}" alt="Final Markdown">
+        <div class="caption">FINAL MARKDOWN</div>
+      </a>
+    </div>
+  </div>
+
+{% schema %}
+    {
+        "name": "Collection featured",
+        "class": "collection_featured",
+        "tag": "section",
+        "disabled_on": {
+            "groups": ["header", "footer"]
+        },
+        "settings": [
+        
+        ],
+        "presets": [
+            {
+                "name": "Collection featured"
+            }
+
+        ]
+    }
+{% endschema %}
