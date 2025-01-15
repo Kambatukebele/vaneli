@@ -13,6 +13,42 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "link_list_4RY9Nh": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>LET US HELP YOU</strong>",
+            "menu": "footer"
+          }
+        },
+        "link_list_jrrUc8": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>ABOUT US</strong>",
+            "menu": "about-us-footer-link"
+          }
+        },
+        "link_list_3FNxPk": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>INFORMATION</strong>",
+            "menu": "information-footer"
+          }
+        },
+        "link_list_FpDzbB": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>MY ACCOUNT</strong>",
+            "menu": "my-account-footer"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_4RY9Nh",
+        "link_list_jrrUc8",
+        "link_list_3FNxPk",
+        "link_list_FpDzbB"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,

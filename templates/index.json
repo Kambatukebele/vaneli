@@ -9,76 +9,196 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "slideshow_XETtbj": {
+      "type": "slideshow",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "slide_Bffm9G": {
+          "type": "slide",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "image": "shopify://shop_images/s-9-3_2048x_c0487788-ac91-41d9-b527-a6add70a7347.jpg",
+            "heading": "Your Style, Your Story!",
+            "heading_color_id": "#000000",
+            "heading_size": "h0",
+            "subheading": "",
+            "subheading_color_id": "#000000",
+            "button_label": "Shop the Trends",
+            "btn_background_color_id": "#000000",
+            "btn_text_color_id": "#ffffff",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "is_color_box_background_id_active": false,
+            "box_background_color_id": "#ffffff",
+            "text_alignment_mobile": "center"
           }
         },
-        "button": {
-          "type": "buttons",
+        "slide_hwNYJF": {
+          "type": "slide",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "shopify://shop_images/s-4-1_2048x_eecbe457-a9a6-4dd0-ad17-a3ca5728ed6d.jpg",
+            "heading": "Stay Chic, Stay Fierce!",
+            "heading_color_id": "#ff0d0d",
+            "heading_size": "hxxl",
+            "subheading": "",
+            "subheading_color_id": "#ffffff",
+            "button_label": "Button label",
+            "btn_background_color_id": "#000000",
+            "btn_text_color_id": "#ffffff",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "is_color_box_background_id_active": true,
+            "box_background_color_id": "#ffffff",
+            "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "slide_Bffm9G",
+        "slide_hwNYJF"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
         "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "collection_featured_YkB99Y": {
+      "type": "collection-featured",
+      "settings": {}
+    },
+    "text_slider_RDALKt": {
+      "type": "textSlider",
+      "blocks": {
+        "text_slider_P8QU3F": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_QaBTKJ": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_BQH9PN": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_rKkzpb": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_nh6kmT": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_PtAVYn": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_gxcgmq": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_cewAUV": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_UWWKYR": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_jKei6A": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_CQj6Xq": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_dPRbTx": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_L3TqQY": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_6PL38G": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        },
+        "text_slider_B9HVjz": {
+          "type": "textSlider",
+          "settings": {
+            "textSlider_text_id": "50% OFF ON SALES"
+          }
+        }
+      },
+      "block_order": [
+        "text_slider_P8QU3F",
+        "text_slider_QaBTKJ",
+        "text_slider_BQH9PN",
+        "text_slider_rKkzpb",
+        "text_slider_nh6kmT",
+        "text_slider_PtAVYn",
+        "text_slider_gxcgmq",
+        "text_slider_cewAUV",
+        "text_slider_UWWKYR",
+        "text_slider_jKei6A",
+        "text_slider_CQj6Xq",
+        "text_slider_dPRbTx",
+        "text_slider_L3TqQY",
+        "text_slider_6PL38G",
+        "text_slider_B9HVjz"
+      ],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "textSlider_background_color_id": "#d9b6b6",
+        "textSlider_text_color_id": "#ffffff",
+        "textSlider_padding_top_id": 10
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "slideshow_XETtbj",
+    "collection_featured_YkB99Y",
+    "text_slider_RDALKt"
   ]
 }
