@@ -3,25 +3,25 @@
 <div class="grid-container">
     <div class="grid-item">
       <a href="#athleisure">
-        <img src="{{ 'featured.jpg' | asset_url }}" alt="Athleisure">
+        <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
         <div class="caption">ATHLEISURE</div>
       </a>
     </div>
     <div class="grid-item">
       <a href="#outerwear">
-        <img src="{{ 'featured.jpg' | asset_url }}" alt="Outerwear">
+        <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
         <div class="caption">OUTERWEAR</div>
       </a>
     </div>
     <div class="grid-item">
       <a href="#basics">
-        <img src="{{ 'featured.jpg' | asset_url }}" alt="Basics">
+        <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
         <div class="caption">BASICS</div>
       </a>
     </div>
     <div class="grid-item">
       <a href="#final-markdown">
-        <img src="{{ 'featured.jpg' | asset_url }}" alt="Final Markdown">
+        <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
         <div class="caption">FINAL MARKDOWN</div>
       </a>
     </div>
@@ -36,7 +36,11 @@
             "groups": ["header", "footer"]
         },
         "settings": [
-        
+            {
+                "type": "image_picker",
+                "id": "image_picker_id",
+                "label": "Image picker"
+            }
         ],
         "presets": [
             {
