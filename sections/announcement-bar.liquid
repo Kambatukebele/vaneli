@@ -18,8 +18,8 @@
   {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
-<div
-  class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
+<div style="background-color:{{ section.settings.color_background_id }}"
+  class="utility-bar bg-announcement gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
   {{ block.shopify_attributes }}
 >
   <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}">
@@ -41,7 +41,7 @@
             >
           {%- endif -%}
           <p class="announcement-bar__message h5">
-            <span>{{ section.blocks.first.settings.text | escape }}</span>
+            <span style="color:{{ section.settings.color_text_id }}">{{ section.blocks.first.settings.text | escape }}</span>
             {%- if section.blocks.first.settings.link != blank -%}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
             {%- endif -%}
@@ -59,7 +59,7 @@
         aria-label="{{ 'sections.announcements.announcement_bar' | t }}"
       >
         <div class="announcement-bar-slider slider-buttons">
-          <button
+          <button style="color:{{ section.settings.color_btn_id }}"
             type="button"
             class="slider-button slider-button--prev"
             name="previous"
@@ -102,7 +102,7 @@
                       >
                     {%- endif -%}
                     <p class="announcement-bar__message h5">
-                      <span>{{ block.settings.text | escape }}</span>
+                      <span style="color:{{ section.settings.color_text_id }}">{{ block.settings.text | escape }}</span>
                       {%- if block.settings.link != blank -%}
                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                       {%- endif -%}
@@ -116,6 +116,7 @@
             {%- endfor -%}
           </div>
           <button
+            style="color:{{ section.settings.color_btn_id }}"
             type="button"
             class="slider-button slider-button--next"
             name="next"
@@ -164,6 +165,7 @@
   </div>
 </div>
 
+
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
@@ -174,10 +176,22 @@
   },
   "settings": [
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-4"
+      "type": "color",
+      "id": "color_background_id",
+      "label": "Color Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "color_text_id",
+      "label": "Color Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color_btn_id",
+      "label": "Color Slider",
+      "default": "#ffffff"
     },
     {
       "type": "checkbox",
