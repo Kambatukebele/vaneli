@@ -42,7 +42,7 @@
         "announcement_Df9FzF"
       ],
       "settings": {
-        "color_background_id": "#d9b6b6",
+        "color_background_id": "#000000",
         "color_text_id": "#ffffff",
         "color_btn_id": "#ffffff",
         "show_line_separator": true,
