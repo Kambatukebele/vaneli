@@ -1,7 +1,7 @@
 {{ 'section-textSlider.css' | asset_url | stylesheet_tag }}
 
 <!-- Text SLider -->
-    <section style="background-color:{{- section.settings.textSlider_background_color_id -}};padding:{{ section.settings.textSlider_padding_top_id }} 0px" class="textSlider">
+    <section style="background-color:{{- section.settings.textSlider_background_color_id -}};padding:{{ section.settings.textSlider_padding_top_id }}px 0px; font-family: {{ settings.type_header_font.family }}" class="textSlider">
       <div class="textSlider__wrapper">
         <div class="textSlider__group">
           {%- if section.blocks.size == 1 or section.blocks.size > 1 -%}
@@ -18,7 +18,7 @@
       </div>
     </section>
     <!-- End Text SLider -->
-
+    
 {% schema %}
     {
         "name": "TextSlider",
@@ -44,7 +44,7 @@
             "type": "range",
             "id": "textSlider_padding_top_id",
             "label": "Padding top",
-            "min": 10,
+            "min": 3,
             "max": 40,
             "step": 1,
             "unit": "px",

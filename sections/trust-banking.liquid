@@ -1,0 +1,36 @@
+<section class="payment-img">
+    <div class="payment-img__wrapper">
+        <img src="{{ section.settings.trust_banking_id | image_url: width: 300, height: 113 }}">
+    </div>
+</section>
+<style>
+    .payment-img{
+        height: 90px;
+        width: 100%;
+        position:relative;
+    }
+    .payment-img__wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+{% schema %}
+    {
+        "name": "Trust Banking",
+        "class": "trust_banking",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "trust_banking_id",
+                "label": "Add Payments Image"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Trust Banking"
+            }
+        ]
+    }
+{% endschema %}

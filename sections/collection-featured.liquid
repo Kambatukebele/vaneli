@@ -1,32 +1,36 @@
 {{ 'section-collection-featured.css' | asset_url | stylesheet_tag }}
 
 <div class="grid-container">
-    <div class="grid-item">
-      <a href="#athleisure">
-        <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
-        <div class="caption">ATHLEISURE</div>
-      </a>
-    </div>
-    <div class="grid-item">
+    {%- if section.settings.collection_list_featured_id != blank -%}
+      {%- for collection in section.settings.collection_list_featured_id -%}
+        <div class="grid-item">
+          <a href="{{- collection.url -}}">
+            <img width="480" src="{{ collection.image | image_url: width: 480, height:480   }}" alt="{{- collection.title -}}">
+            <div class="caption">{{- collection.title -}}</div>
+          </a>
+        </div>
+      {%- endfor -%}
+    {%- endif -%}
+    
+    {% comment %} <div class="grid-item">
       <a href="#outerwear">
-        <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
+         <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
         <div class="caption">OUTERWEAR</div>
       </a>
     </div>
     <div class="grid-item">
       <a href="#basics">
-        <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
+         <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
         <div class="caption">BASICS</div>
       </a>
     </div>
     <div class="grid-item">
       <a href="#final-markdown">
-        <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
+         <img src="{{ section.settings.image_picker_id | image_url: width: 480, height:480   }}" alt="Athleisure">
         <div class="caption">FINAL MARKDOWN</div>
       </a>
-    </div>
+    </div> {% endcomment %}
   </div>
-
 {% schema %}
     {
         "name": "Collection featured",
@@ -37,9 +41,10 @@
         },
         "settings": [
             {
-                "type": "image_picker",
-                "id": "image_picker_id",
-                "label": "Image picker"
+                "type": "collection_list",
+                "id": "collection_list_featured_id",
+                "label": "Choose collection",
+                "limit": 4
             }
         ],
         "presets": [
