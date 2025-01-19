@@ -1,5 +1,7 @@
 <div id="shop-the-latest" class="page-width-desktop">
-  <h2 style="font-family:{{ settings.type_header_font.family }}" class="">SHOP THE LATEST</h2>
+  <h2 style="font-family:{{ settings.type_header_font.family }}" class="">
+    {{ section.settings.dynamic_collection_text_id }}
+  </h2>
   <div style="font-familly:{{ settings.type_body_font.family }}" class="buttons-container">
     {% if section.settings.collection != blank %}
       <button class="myclickableBtn active" data-collection-id="collection">
@@ -32,18 +34,35 @@
     {% endif %}    
   </div>
 
-  <div style="font-familly:{{ settings.type_body_font.family }}" id="collection-container" class="">
+  <div style="font-familly:{{ settings.type_body_font.family }}; font-weight:700" id="collection-container" class="">
     <div id="product-grid" class="product-grid">
       <!-- Default collection products will load here -->
       {% if section.settings.collection != blank %}
-        {% for product in section.settings.collection.products %}
+        {% for product in section.settings.collection.products limit: section.settings.dynamic_collection_range_limit_id %}
           <div class="product-item">
             <a class="product-item-link" href="{{ product.url }}">
               <div class="product-image">
                 <img src="{{ product.featured_image | img_url: '600x900_crop_center' }}" alt="{{ product.title }}">
               </div>
-              <h3 class="product-title">{{ product.title | truncate: 50, "..." }}</h3>
-              <p class="product-price">{{ product.price | money }}</p>
+              <div class="product-collection-tag">
+                <span>Limited edition</span>
+                <span>New</span>
+              </div>
+              <div class="product__title-price_block">
+                <h3 class="product-title">{{ product.title | truncate: 50, "..." }}</h3>
+                <div class="product-price-block">
+                  <p class="product-price">{{ product.price | money }}</p>
+                  <p class="product-price-compare">{{ product.price | money }}</p>
+                </div>
+                <div class="product-variant-block">
+                  <span class="product-variant product-variant-active"></span>
+                  <span class="product-variant"></span>
+                  <span class="product-variant"></span>
+                  <span class="product-variant"></span>
+                  <span class="product-variant"></span>
+                  <span class="product-variant"></span>
+                </div>
+              </div>
             </a>
           </div>
         {% endfor %}
@@ -53,6 +72,14 @@
 </div>
 
 <style>
+  #shop-the-latest{
+    padding-top: {{ section.settings.dynamic_padding_top_id }}px;
+    padding-bottom: {{ section.settings.dynamic_padding_bottom_id }}px;
+  }
+  #shop-the-latest h2{
+    padding: 0px 20px;
+  }
+  
 /* Styles for buttons and grid */
 .myclickableBtn {
   border: none;
@@ -81,15 +108,33 @@
   gap: 16px;
   grid-template-columns: repeat(2, 1fr);
 }
+.product-image{ 
+  border-radius: 8px;
+}
+.product-image img{
+  border-radius: 8px;
+}
 .product-item-link{
   text-decoration: none;
 }
-
-@media (min-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.product-collection-tag{
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items:flex-start;
+  gap:4px;
 }
+.product-collection-tag span{
+  display:block;
+  background-color: black;
+  color:white;
+  border-radius: 4px;
+  font-size:12px;
+  text-transform: uppercase;
+  font-weight:500;
+  padding: 3px 8px;
+}
+
 
 .product-item {
   text-align: center;
@@ -109,13 +154,65 @@
 .product-title {
   margin: 8px 0;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
+  text-align:left;
+  font-size:13px;
+  line-height:1.5;
+}
+.product-price-block{
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+  gap:10px
+}
+.product-price, .product-price-compare {
+  
+  font-size: 13px;
+  
+  margin:0px;
+}
+.product-price{
+  color: #000;
+  font-weight:600;
+}
+.product-price-compare{
+  color:#303030;
+  font-weight:400;
+  text-decoration: line-through;
+}
+.product-variant-block{
+  display: flex;
+  justify-content:flex-start;
+  gap:5px;
+  align-items:center; 
+  height:40px;
+}
+.product-variant{
+  width: 18px;
+  height: 18px;
+  display:block;
+  border-radius: 50%;
+  background-color:red;
+}
+.product-variant-active{
+  border: 2px solid black;
 }
 
-.product-price {
-  color: #666;
-  font-size: 14px;
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }  
 }
+@media (min-width: 1024px) {
+  .product-collection-tag{
+    flex-direction:row;
+  }
+  #shop-the-latest h2{
+    padding: 0px 0px;
+  }
+  
+}
+
 </style>
 
 <script>
@@ -237,6 +334,22 @@ document.addEventListener("DOMContentLoaded", () => {
   "name": "Dynamic Collection",
   "settings": [
     {
+      "type": "text",
+      "id":"dynamic_collection_text_id",
+      "label": "Title",
+      "default": "Shop in our store"
+    },
+    {
+      "type": "range",
+      "id": "dynamic_collection_range_limit_id",
+      "label": "Number of collection to show",
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "unit": "col",
+    },
+    {
       "type": "collection",
       "id": "collection",
       "label": "Default Collection"
@@ -265,6 +378,26 @@ document.addEventListener("DOMContentLoaded", () => {
       "type": "collection",
       "id": "collection_five",
       "label": "Collection Five"
+    },
+    {
+      "type": "range",
+      "id": "dynamic_padding_top_id",
+      "min": 5,
+      "max": 32,
+      "step": 1,
+      "label": "Padding top",
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "dynamic_padding_bottom_id",
+      "min": 5,
+      "max": 32,
+      "step": 1,
+      "label": "Padding bottom",
+      "unit": "px",
+      "default": 12
     }
   ],
   "presets": [

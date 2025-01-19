@@ -1,0 +1,121 @@
+<section class="promotion">
+    <span>
+       {{ section.settings.promotion_inline_richtext_id }}
+    </span>
+    <h5>
+        {{ section.settings.promotion_text_id }}
+    </h5>
+</section>
+
+<style>
+.promotion{
+    background-color:{{ section.settings.promotion_background_color_id }};
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:16px;
+    padding-top: {{ section.settings.promotion_padding_top_id }}px;
+    padding-bottom: {{ section.settings.promotion_padding_bottom_id }}px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.promotion span, .promotion h5{
+    color: {{ section.settings.promotion_text_color_id }};
+    display: block;
+}
+.promotion span{
+    font-family: {{ settings.type_body_font.family }};
+    font-size: 14px;
+    border:1px solid black;
+    padding:0px;
+    margin: 0px;
+    text-align: {{ section.settings.promotion_text_align_id }};
+    
+}
+.promotion h5{
+     font-family: {{ settings.type_header_font.family }};
+     font-size: 20px;
+     border:1px solid black;
+     padding:0px;
+    margin: 0px;
+    text-align: {{ section.settings.promotion_text_align_id }};
+}
+</style>
+
+{% schema %}
+    {
+        "name": "Promotion",
+        "class": "promotion",
+        "settings": [
+            {
+                "type": "inline_richtext",
+                "id": "promotion_inline_richtext_id",
+                "label": "Text top",
+                "default": "Write something interresting"
+            },
+            {
+                "type": "text",
+                "id": "promotion_text_id",
+                "label": "Main text",
+                "default": "Heading text"
+            },
+            {
+                "type": "select",
+                "id": "promotion_text_align_id",
+                "label": "Text Alignment",
+                "options": [
+                    {
+                        "label": "Left",
+                        "value": "left"
+                    },
+                    {
+                        "label": "Center",
+                        "value": "center"
+                    }
+                ],
+                "default": "left",
+                
+            },
+            {
+                "type": "color",
+                "id": "promotion_background_color_id",
+                "label": "Background color",
+                "default": "#000000"
+            },
+            {
+                "type": "color",
+                "id": "promotion_text_color_id",
+                "label": "Text color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "range",
+                "id": "promotion_padding_top_id",
+                "label": "Padding top",
+                "min": 5,
+                "max": 32,
+                "step": 1,
+                "unit": "px",
+                "default": 12,
+                
+            },
+            {
+                "type": "range",
+                "id": "promotion_padding_bottom_id",
+                "label": "Padding bottom",
+                "min": 5,
+                "max": 32,
+                "step": 1,
+                "unit": "px",
+                "default": 12,
+                
+            }
+        ],
+        "presets": [
+            {
+                "name": "Promotion"
+            }
+        ]
+    }
+{% endschema %}

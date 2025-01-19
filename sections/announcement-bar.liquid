@@ -102,7 +102,7 @@
                       >
                     {%- endif -%}
                     <p class="announcement-bar__message h5">
-                      <span style="color:{{ section.settings.color_text_id }}">{{ block.settings.text | escape }}</span>
+                      <span style="color:{{ section.settings.color_text_id }}; text-transform: {{ section.settings.announcement_text_transform_id }}; font-weight: 700">{{ block.settings.text | escape }}</span>
                       {%- if block.settings.link != blank -%}
                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                       {%- endif -%}
@@ -192,6 +192,25 @@
       "id": "color_btn_id",
       "label": "Color Slider",
       "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "announcement_text_transform_id",
+      "label": "Text transform",
+      "options": [
+        {
+          "label": "Normal",
+          "value": "none"
+        },
+        {
+          "label": "Uppercase",
+          "value": "uppercase"
+        },
+        {
+          "label": "Capitalize",
+          "value": "capitalize"
+        }
+      ]
     },
     {
       "type": "checkbox",

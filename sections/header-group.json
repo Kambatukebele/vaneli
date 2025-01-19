@@ -17,14 +17,14 @@
         "announcement_RgFVwX": {
           "type": "announcement",
           "settings": {
-            "text": "✨ Free Shipping on Orders Over $50! ✨",
+            "text": "Free Shipping on Orders Over $50!",
             "link": ""
           }
         },
         "announcement_RpgtcV": {
           "type": "announcement",
           "settings": {
-            "text": "🔥 Limited Time Offer: 20% Off New Arrivals! 🔥",
+            "text": "Limited Time Offer: 20% Off New Arrivals!",
             "link": ""
           }
         },
@@ -45,6 +45,7 @@
         "color_background_id": "#000000",
         "color_text_id": "#ffffff",
         "color_btn_id": "#ffffff",
+        "announcement_text_transform_id": "uppercase",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": true,

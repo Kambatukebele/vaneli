@@ -15,13 +15,13 @@
         "slide_Bffm9G": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/bg-test2.jpg",
-            "heading": "",
-            "heading_color_id": "#000000",
-            "heading_size": "h0",
+            "image": "shopify://shop_images/naked.webp",
+            "heading": "<strong>THE LOOK OF TOP BRANDS, AT THE RIGHT PRICE</strong>",
+            "heading_color_id": "#ffffff",
+            "heading_size": "hxxl",
             "subheading": "",
             "subheading_color_id": "#000000",
-            "button_label": "",
+            "button_label": "SHOP COLLECTION",
             "btn_background_color_id": "#000000",
             "btn_text_color_id": "#ffffff",
             "link": "",
@@ -46,7 +46,7 @@
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
-        "show_text_below": false,
+        "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
     },
@@ -74,7 +74,7 @@
         "featured_collection_zRhJDY": {
           "type": "featured_collection",
           "settings": {
-            "collection": "evening-rode"
+            "collection": "relaxing-set"
           }
         }
       },
@@ -214,33 +214,6 @@
         "textSlider_padding_top_id": 3
       }
     },
-    "dynamic_collection_HAt6QX": {
-      "type": "dynamic-collection",
-      "settings": {
-        "collection": "bodysuit",
-        "collection_one": "combination",
-        "collection_two": "",
-        "collection_three": "",
-        "collection_four": "",
-        "collection_five": ""
-      }
-    },
-    "image_banner_r7Uk9V": {
-      "type": "image-banner",
-      "settings": {
-        "image": "shopify://shop_images/OCCASION_DESK_EU_AUS.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
     "collection_list_4HgQRr": {
       "type": "collection-list",
       "blocks": {
@@ -261,24 +234,74 @@
           "settings": {
             "collection": "jackets-and-coats"
           }
+        },
+        "featured_collection_LzyPKr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bodysuit"
+          }
         }
       },
       "block_order": [
         "featured_collection_jM8VmN",
         "featured_collection_Y8hAen",
-        "featured_collection_waLhKB"
+        "featured_collection_waLhKB",
+        "featured_collection_LzyPKr"
       ],
       "settings": {
         "title": "",
         "heading_size": "h1",
         "image_ratio": "portrait",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "color_scheme": "",
         "show_view_all": false,
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "dynamic_collection_HAt6QX": {
+      "type": "dynamic-collection",
+      "settings": {
+        "dynamic_collection_text_id": "SHOP OUR LIMITED EDITION",
+        "dynamic_collection_range_limit_id": 4,
+        "collection": "bodysuit",
+        "collection_one": "combination",
+        "collection_two": "",
+        "collection_three": "",
+        "collection_four": "",
+        "collection_five": "",
+        "dynamic_padding_top_id": 12,
+        "dynamic_padding_bottom_id": 32
+      }
+    },
+    "promotion_6XkJpn": {
+      "type": "promotion",
+      "settings": {
+        "promotion_inline_richtext_id": "★★★★★ Noté <strong>4,7/5</strong> par plus de <strong>5 500 femmes</strong> sur Trustpilot.",
+        "promotion_text_id": "The perfect Valentine’s Day gift, chosen as a favorite by couples.",
+        "promotion_text_align_id": "center",
+        "promotion_background_color_id": "#000000",
+        "promotion_text_color_id": "#ffffff",
+        "promotion_padding_top_id": 12,
+        "promotion_padding_bottom_id": 12
+      }
+    },
+    "image_banner_r7Uk9V": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/OCCASION_DESK_EU_AUS.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "rich_text_t6KTzL": {
@@ -322,15 +345,80 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "multicolumn_N9x89N": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_FcmRCA": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Easy 30-Day Returns, Changed Your Mind?</strong>",
+            "text": "<p><em>No problem. Try us and see the difference for yourself!</em></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_CzWYp8": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Trustpilot 4.7/5 – 3500+ Reviews</strong>",
+            "text": "<p><em>Your opinion matters! Join in and see for yourself why our customers love us.</em></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_nxxapk": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Shipped in 48 Hours, Ready to Gift</strong>",
+            "text": "<p><em>Every order is shipped quickly and arrives in a gift box, ready to create magical moments from the moment it’s opened.</em></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VppWWz": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>No Customs, No Surprises</strong>",
+            "text": "<p><em>Shop a French brand worry-free. We take care of everything, from taxes to customs, for a hassle-free experience with no hidden fees.</em></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_FcmRCA",
+        "column_CzWYp8",
+        "column_nxxapk",
+        "column_VppWWz"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "slideshow_XETtbj",
     "collection_list_BwgLPV",
     "text_slider_RDALKt",
-    "dynamic_collection_HAt6QX",
-    "image_banner_r7Uk9V",
     "collection_list_4HgQRr",
-    "rich_text_t6KTzL"
+    "dynamic_collection_HAt6QX",
+    "promotion_6XkJpn",
+    "image_banner_r7Uk9V",
+    "rich_text_t6KTzL",
+    "multicolumn_N9x89N"
   ]
 }
