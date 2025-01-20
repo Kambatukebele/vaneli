@@ -81,6 +81,18 @@
   }
   
 /* Styles for buttons and grid */
+.buttons-container{
+  overflow-x: scroll;
+  display:flex;
+  flex-shrink: 1;
+  white-space: nowrap;
+  margin-bottom:20px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.buttons-container::-webkit-scrollbar{
+  display: none;
+}
 .myclickableBtn {
   border: none;
   padding: 10px 20px;
@@ -102,6 +114,8 @@
   background-color: #000;
   color: #fff;
 }
+
+
 
 .product-grid {
   display: grid;
