@@ -234,30 +234,30 @@
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".myclickableBtn");
-  const collectionContainer = document.getElementById("product-grid");
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".myclickableBtn");
+    const collectionContainer = document.getElementById("product-grid");
 
-  // Render products dynamically
-  function renderProducts(productsHtml) {
-    collectionContainer.innerHTML = productsHtml;
-  }
+    // Render products dynamically
+    function renderProducts(productsHtml) {
+      collectionContainer.innerHTML = productsHtml;
+    }
 
-  // Event listeners for buttons
-  buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-      // Remove active class from all buttons
-      buttons.forEach((btn) => btn.classList.remove("active"));
-      this.classList.add("active");
+    // Event listeners for buttons
+    buttons.forEach((button) => {
+      button.addEventListener("click", function () {
+        // Remove active class from all buttons
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        this.classList.add("active");
 
-      // Fetch the correct products from the data attribute
-      const collectionId = this.getAttribute("data-collection-id");
-      const productsHtml = document.getElementById(collectionId).innerHTML;
+        // Fetch the correct products from the data attribute
+        const collectionId = this.getAttribute("data-collection-id");
+        const productsHtml = document.getElementById(collectionId).innerHTML;
 
-      renderProducts(productsHtml);
+        renderProducts(productsHtml);
+      });
     });
   });
-});
 </script>
 
 <!-- Hidden containers for collections -->
@@ -265,12 +265,29 @@ document.addEventListener("DOMContentLoaded", () => {
   <div id="collection">
     {% for product in section.settings.collection.products %}
       <div class="product-item">
-        <a href="{{ product.url }}">
+        <a class="product-item-link" href="{{ product.url }}">
           <div class="product-image">
             <img src="{{ product.featured_image | img_url: '600x900_crop_center' }}" alt="{{ product.title }}">
           </div>
-          <h3 class="product-title">{{ product.title }}</h3>
-          <p class="product-price">{{ product.price | money }}</p>
+          <div class="product-collection-tag">
+            <span>Limited edition</span>
+            <span>New</span>
+          </div>
+          <div class="product__title-price_block">
+            <h3 class="product-title">{{ product.title | truncate: 50, "..." }}</h3>
+            <div class="product-price-block">
+              <p class="product-price">{{ product.price | money }}</p>
+              <p class="product-price-compare">{{ product.price | money }}</p>
+            </div>
+            <div class="product-variant-block">
+              <span class="product-variant product-variant-active"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+            </div>
+          </div>
         </a>
       </div>
     {% endfor %}
@@ -279,12 +296,29 @@ document.addEventListener("DOMContentLoaded", () => {
   <div id="collection_one">
     {% for product in section.settings.collection_one.products %}
       <div class="product-item">
-        <a href="{{ product.url }}">
+        <a class="product-item-link" href="{{ product.url }}">
           <div class="product-image">
             <img src="{{ product.featured_image | img_url: '600x900_crop_center' }}" alt="{{ product.title }}">
           </div>
-          <h3 class="product-title">{{ product.title }}</h3>
-          <p class="product-price">{{ product.price | money }}</p>
+          <div class="product-collection-tag">
+            <span>Limited edition</span>
+            <span>New</span>
+          </div>
+          <div class="product__title-price_block">
+            <h3 class="product-title">{{ product.title | truncate: 50, "..." }}</h3>
+            <div class="product-price-block">
+              <p class="product-price">{{ product.price | money }}</p>
+              <p class="product-price-compare">{{ product.price | money }}</p>
+            </div>
+            <div class="product-variant-block">
+              <span class="product-variant product-variant-active"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+            </div>
+          </div>
         </a>
       </div>
     {% endfor %}
@@ -293,12 +327,29 @@ document.addEventListener("DOMContentLoaded", () => {
   <div id="collection_two">
     {% for product in section.settings.collection_two.products %}
       <div class="product-item">
-        <a href="{{ product.url }}">
+        <a class="product-item-link" href="{{ product.url }}">
           <div class="product-image">
             <img src="{{ product.featured_image | img_url: '600x900_crop_center' }}" alt="{{ product.title }}">
           </div>
-          <h3 class="product-title">{{ product.title }}</h3>
-          <p class="product-price">{{ product.price | money }}</p>
+          <div class="product-collection-tag">
+            <span>Limited edition</span>
+            <span>New</span>
+          </div>
+          <div class="product__title-price_block">
+            <h3 class="product-title">{{ product.title | truncate: 50, "..." }}</h3>
+            <div class="product-price-block">
+              <p class="product-price">{{ product.price | money }}</p>
+              <p class="product-price-compare">{{ product.price | money }}</p>
+            </div>
+            <div class="product-variant-block">
+              <span class="product-variant product-variant-active"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+            </div>
+          </div>
         </a>
       </div>
     {% endfor %}
@@ -307,12 +358,29 @@ document.addEventListener("DOMContentLoaded", () => {
   <div id="collection_three">
     {% for product in section.settings.collection_three.products %}
       <div class="product-item">
-        <a href="{{ product.url }}">
+        <a class="product-item-link" href="{{ product.url }}">
           <div class="product-image">
             <img src="{{ product.featured_image | img_url: '600x900_crop_center' }}" alt="{{ product.title }}">
           </div>
-          <h3 class="product-title">{{ product.title }}</h3>
-          <p class="product-price">{{ product.price | money }}</p>
+          <div class="product-collection-tag">
+            <span>Limited edition</span>
+            <span>New</span>
+          </div>
+          <div class="product__title-price_block">
+            <h3 class="product-title">{{ product.title | truncate: 50, "..." }}</h3>
+            <div class="product-price-block">
+              <p class="product-price">{{ product.price | money }}</p>
+              <p class="product-price-compare">{{ product.price | money }}</p>
+            </div>
+            <div class="product-variant-block">
+              <span class="product-variant product-variant-active"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+            </div>
+          </div>
         </a>
       </div>
     {% endfor %}
@@ -321,12 +389,29 @@ document.addEventListener("DOMContentLoaded", () => {
   <div id="collection_four">
     {% for product in section.settings.collection_four.products %}
       <div class="product-item">
-        <a href="{{ product.url }}">
+        <a class="product-item-link" href="{{ product.url }}">
           <div class="product-image">
             <img src="{{ product.featured_image | img_url: '600x900_crop_center' }}" alt="{{ product.title }}">
           </div>
-          <h3 class="product-title">{{ product.title }}</h3>
-          <p class="product-price">{{ product.price | money }}</p>
+          <div class="product-collection-tag">
+            <span>Limited edition</span>
+            <span>New</span>
+          </div>
+          <div class="product__title-price_block">
+            <h3 class="product-title">{{ product.title | truncate: 50, "..." }}</h3>
+            <div class="product-price-block">
+              <p class="product-price">{{ product.price | money }}</p>
+              <p class="product-price-compare">{{ product.price | money }}</p>
+            </div>
+            <div class="product-variant-block">
+              <span class="product-variant product-variant-active"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+            </div>
+          </div>
         </a>
       </div>
     {% endfor %}
@@ -335,12 +420,29 @@ document.addEventListener("DOMContentLoaded", () => {
   <div id="collection_five">
     {% for product in section.settings.collection_five.products %}
       <div class="product-item">
-        <a href="{{ product.url }}">
+        <a class="product-item-link" href="{{ product.url }}">
           <div class="product-image">
             <img src="{{ product.featured_image | img_url: '600x900_crop_center' }}" alt="{{ product.title }}">
           </div>
-          <h3 class="product-title">{{ product.title }}</h3>
-          <p class="product-price">{{ product.price | money }}</p>
+          <div class="product-collection-tag">
+            <span>Limited edition</span>
+            <span>New</span>
+          </div>
+          <div class="product__title-price_block">
+            <h3 class="product-title">{{ product.title | truncate: 50, "..." }}</h3>
+            <div class="product-price-block">
+              <p class="product-price">{{ product.price | money }}</p>
+              <p class="product-price-compare">{{ product.price | money }}</p>
+            </div>
+            <div class="product-variant-block">
+              <span class="product-variant product-variant-active"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+              <span class="product-variant"></span>
+            </div>
+          </div>
         </a>
       </div>
     {% endfor %}
