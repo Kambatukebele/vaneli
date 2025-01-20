@@ -9,45 +9,24 @@
  */
 {
   "sections": {
-    "slideshow_XETtbj": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_Bffm9G": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/naked.webp",
-            "heading": "<strong>THE LOOK OF TOP BRANDS, AT THE RIGHT PRICE</strong>",
-            "heading_color_id": "#ffffff",
-            "heading_size": "hxxl",
-            "subheading": "",
-            "subheading_color_id": "#000000",
-            "button_label": "SHOP COLLECTION",
-            "btn_background_color_id": "#000000",
-            "btn_text_color_id": "#ffffff",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-left",
-            "show_text_box": true,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "is_color_box_background_id_active": false,
-            "box_background_color_id": "#ffffff",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_Bffm9G"
-      ],
+    "slideshow_alt_BbXLNN": {
+      "type": "slideshow-alt",
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "adapt_image",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "slideshow_alt_positioning_id": "middle-right",
+        "slideshow_alt_select_height_large_id": 100,
+        "slideshow_alt_select_height_small_id": 60,
+        "slideshow_alt_image_large_id": "shopify://shop_images/naked.webp",
+        "slideshow_alt_image_small_id": "shopify://shop_images/4.webp",
+        "slideshow_alt_heading_size_small_screen_id": 32,
+        "slideshow_alt_heading_size_large_screen_id": 48,
+        "slideshow_alt_heading_text_id": "The best the better",
+        "slideshow_alt_heading_color_id": "#ffffff",
+        "slideshow_alt_subheading_text_id": "<p>Long way, better dressed</p>",
+        "slideshow_alt_subheading_color_id": "#d7d7d7",
+        "slideshow_alt_button_primary_id": "Show now",
+        "slideshow_alt_button_background_color_id": "rgba(0,0,0,0)",
+        "slideshow_alt_button_text_color_id": "#ffffff",
+        "slideshow_alt_button_border_color_id": "#ffffff"
       }
     },
     "collection_list_BwgLPV": {
@@ -411,7 +390,7 @@
     }
   },
   "order": [
-    "slideshow_XETtbj",
+    "slideshow_alt_BbXLNN",
     "collection_list_BwgLPV",
     "text_slider_RDALKt",
     "collection_list_4HgQRr",

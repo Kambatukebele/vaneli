@@ -1,0 +1,277 @@
+<section class="slideshow-alt">
+   <div class="slideshow-alt__container page-width">
+        <h1>
+            {{ section.settings.slideshow_alt_heading_text_id }}
+        </h1>
+        <p>
+            {{ section.settings.slideshow_alt_subheading_text_id }}
+        </p>
+        <button class="mySlideShowBtn">
+            <a>
+                {{ section.settings.slideshow_alt_button_primary_id }}
+            </a>
+        </button>
+    </div>
+</section>
+
+<style>
+    .slideshow-alt{
+        background-image: url('{{ section.settings.slideshow_alt_image_small_id | image_url: width: 5000 }}');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        width:100%;
+        height:{{ section.settings.slideshow_alt_select_height_small_id }}vh;
+        position:relative;
+    }
+    .slideshow-alt__container{
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 30px 20px;
+        {% comment %} border: 1px solid black; {% endcomment %}
+    }
+    .slideshow-alt__container h1{
+        font-size: {{ section.settings.slideshow_alt_heading_size_small_screen_id }}px;
+        font-family: {{ settings.type_header_font.family }};
+        color: {{ section.settings.slideshow_alt_heading_color_id }};
+    }
+    .slideshow-alt__container p{
+        font-size: 16px;
+        font-family: {{ settings.type_body_font.family }};
+        color: {{ section.settings.slideshow_alt_subheading_color_id }};
+    }
+    .mySlideShowBtn{
+        background-color: {% if section.settings.slideshow_alt_button_background_color_id != blank %} {{ section.settings.slideshow_alt_button_background_color_id }} {% endif %};
+        color:{% if section.settings.slideshow_alt_button_text_color_id != blank %} {{ section.settings.slideshow_alt_button_text_color_id }} {% endif %};
+        border: {% if section.settings.slideshow_alt_button_border_color_id != blank %} 1px solid {{ section.settings.slideshow_alt_button_border_color_id }} {% endif %};
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+        padding: 0rem 3rem;
+        height: 47px;
+        border-radius: {{ settings.buttons_radius }}px;
+    }
+
+    @media (min-width: 440px) {
+        .slideshow-alt{
+            background-image: url('{{ section.settings.slideshow_alt_image_large_id | image_url: width: 5000 }}');
+        }
+    }
+
+    @media (min-width: 768px) {
+       
+    }
+@media (min-width: 1024px) {
+   .slideshow-alt{
+        height:{{ section.settings.slideshow_alt_select_height_large_id }}vh;
+    }
+     .slideshow-alt__container h1{
+        font-size: {{ section.settings.slideshow_alt_heading_size_large_screen_id }}px;
+    }
+    .slideshow-alt__container{
+        {% case section.settings.slideshow_alt_positioning_id %}
+            {% when "top-left" %}
+                top: 0;
+                left: 0;
+                transform: translate(0, 0);
+            {% when "middle-left" %}
+                top: 50%;
+                left: 0;
+                transform: translate(0, -50%);
+            {% when "bottom-left" %}
+                top: 100%;
+                left: 0;
+                transform: translate(0, -100%);
+            {% when "top-center" %}
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+            {% when "center" %}
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            {% when "bottom-center" %}
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, -100%);
+            {% when "top-right" %}
+                top: 0;
+                left: 100%;
+                transform: translate(-100%, 0);
+            {% when "middle-right" %}
+                top: 50%;
+                left: 100%;
+                transform: translate(-100%, -50%);
+            {% when "bottom-right" %}         
+                top: 100%;
+                left: 100%;
+                transform: translate(-100%, -100%);       
+        {% endcase %}
+    }
+}
+</style>
+{% schema %}
+    {
+        "name": "Slideshow Alt",
+        "class": "slideshowAlt",
+        "settings": [
+            {
+                "type": "select",
+                "id": "slideshow_alt_positioning_id",
+                "label": "Position block",
+                "options": [
+                    {
+                        "label": "Top Left",
+                        "value": "top-left"
+                    },
+                    {
+                        "label": "Middle Left",
+                        "value": "middle-left"
+                    },
+                    {
+                        "label": "Bottom Left",
+                        "value": "bottom-left"
+                    },
+                    {
+                        "label": "Top Center",
+                        "value": "top-center"
+                    },
+                    {
+                        "label": "Center",
+                        "value": "center"
+                    },
+                    {
+                        "label": "Bottom Center",
+                        "value": "bottom-center"
+                    },
+                    {
+                        "label": "Top Right",
+                        "value": "top-right"
+                    },
+                    {
+                        "label": "Middle Right",
+                        "value": "middle-right"
+                    },
+                    {
+                        "label": "Bottom Right",
+                        "value": "bottom-right"
+                    }
+                ],
+                "default": "center"
+            },
+            {
+                "type": "header",
+                "content": "Select Slide height"
+            },
+            {
+                "type": "range",
+                "id": "slideshow_alt_select_height_large_id",
+                "label": "Height large screen",
+                "min": 50,
+                "max": 100,
+                "step": 10,
+                "unit": "vh",
+                "default": 70
+            },
+            {
+                "type": "range",
+                "id": "slideshow_alt_select_height_small_id",
+                "label": "Height small screen",
+                "min": 50,
+                "max": 80,
+                "step": 10,
+                "unit": "vh",
+                "default": 70
+            },
+            {
+                "type": "header",
+                "content": "Select image for Small and Larger screen"
+            },
+            {
+                "type": "image_picker",
+                "id": "slideshow_alt_image_large_id",
+                "label": "Image Large screen",
+            },
+            {
+                "type": "image_picker",
+                "id": "slideshow_alt_image_small_id",
+                "label": "Image Small screen",
+            },
+            {
+                "type": "header",
+                "content": "All About Heading, Subheading and button"
+            },
+            {
+                "type": "range",
+                "id": "slideshow_alt_heading_size_small_screen_id",
+                "min": 24,
+                "max": 36,
+                "label": "Heading font size on small screen",
+                "step": 1,
+                "unit": "px",
+                "default": 25
+            },
+            {
+                "type": "range",
+                "id": "slideshow_alt_heading_size_large_screen_id",
+                "min": 32,
+                "max": 48,
+                "label": "Heading font size on large screen",
+                "step": 1,
+                "unit": "px",
+                "default": 32
+            },
+            {
+                "type": "text",
+                "id": "slideshow_alt_heading_text_id",
+                "label": "Heading",
+                "default": "The best the better"
+            },
+            {
+                "type": "color",
+                "id": "slideshow_alt_heading_color_id",
+                "label": "Heading color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "richtext",
+                "id": "slideshow_alt_subheading_text_id",
+                "label": "Subheading",
+                "default": "<p>Long way, better dressed</p>"
+            },
+            {
+                "type": "color",
+                "id": "slideshow_alt_subheading_color_id",
+                "label": "Sub heading color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "text",
+                "id": "slideshow_alt_button_primary_id",
+                "label": "Button label",
+                "default": "Show now"
+            },
+            {
+                "type": "color",
+                "id": "slideshow_alt_button_background_color_id",
+                "label": "Button background color",
+                "default": "#000000"
+            },
+            {
+                "type": "color",
+                "id": "slideshow_alt_button_text_color_id",
+                "label": "Button text color",
+                "default": "#ffffff"
+            }, 
+            {
+                "type": "color",
+                "id": "slideshow_alt_button_border_color_id",
+                "label": "Button border color",
+                "default": "#000000"
+            }
+        ],
+        "presets": [{"name": "Slideshow Alt"}]
+    }
+{% endschema %}
