@@ -268,10 +268,10 @@
         "dynamic_collection_range_limit_id": 4,
         "collection": "bodysuit",
         "collection_one": "combination",
-        "collection_two": "",
-        "collection_three": "",
-        "collection_four": "",
-        "collection_five": "",
+        "collection_two": "jackets-and-coats",
+        "collection_three": "pajama-set",
+        "collection_four": "relaxing-set",
+        "collection_five": "new-in",
         "dynamic_padding_top_id": 12,
         "dynamic_padding_bottom_id": 32
       }

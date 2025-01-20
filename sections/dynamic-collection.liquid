@@ -81,6 +81,18 @@
   }
   
 /* Styles for buttons and grid */
+.buttons-container{
+  overflow-x: scroll;
+  display:flex;
+  flex-shrink: 1;
+  white-space: nowrap;
+  margin-bottom:20px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.buttons-container::-webkit-scrollbar{
+  display: none;
+}
 .myclickableBtn {
   border: none;
   padding: 10px 20px;
@@ -103,10 +115,13 @@
   color: #fff;
 }
 
+
+
 .product-grid {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(2, 1fr);
+  padding: 0px 20px;
 }
 .product-image{ 
   border-radius: 8px;
@@ -204,6 +219,9 @@
   }  
 }
 @media (min-width: 1024px) {
+  .product-grid {
+  padding: 0px 0px;
+}
   .product-collection-tag{
     flex-direction:row;
   }
